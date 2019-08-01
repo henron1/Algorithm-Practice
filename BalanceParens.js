@@ -25,3 +25,32 @@ function balancedParens(string) {
 console.log(balancedParens('()')) // true
 console.log(balancedParens(')(')) // false
 console.log(balancedParens('()(')) // False
+
+function balancedParens(string) {
+    // Create a dictionary/object; key is open parens, value is close parens
+    const openers = { 
+      '(': ')',
+      '[': ']',
+      '{': '}'
+      };
+    // Create stack and check if open: add to stack; if close: check value of stack
+    const stack = [];
+    // Run for loop on values of the string
+    for (let i = 0; i < string.length; i++) {
+      if (openers[string[i]]) {
+        stack.push(string[i]);
+      // If stack has open parens, pop off stack
+      } else if (stack[stack.length - 1] === '(') {
+        stack.pop();
+      // Else return false
+      } else {
+        return false;
+      }
+    }
+    // return true
+    return stack.length == 0;
+  }
+  
+  console.log(balancedParens('()')) // true
+  console.log(balancedParens(')(')) // false
+  console.log(balancedParens('()(')) // False
