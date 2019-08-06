@@ -51,6 +51,3 @@ function balancedParens(string) {
     return stack.length == 0;
   }
   
-  console.log(balancedParens('()')) // true
-  console.log(balancedParens(')(')) // false
-  console.log(balancedParens('()(')) // False
