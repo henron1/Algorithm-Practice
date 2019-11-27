@@ -2,7 +2,6 @@ function maxArrayQueries(n, queries) {
 	let arr = [];
 	let max = 0;
 
-	// init each element of arr to 0
 	for (let i = 0; i < n; i++) {
 		arr[i] = 0;
 	}
