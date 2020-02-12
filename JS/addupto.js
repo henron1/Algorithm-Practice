@@ -9,4 +9,4 @@ function addUpTo(n) {
 function addUpToRevised(n) {
 	return (n * (n + 1)) / 2;
 }
-console.log(addUpTo(6));
+console.log(addUpTo(9));
