@@ -1,21 +1,3 @@
-var inOrderTraversal = function(root, stack = []) {
-	if (root !== null) {
-		inOrderTraversal(root.left, stack);
-		stack.push(tree.value);
-		inOrderTraversal(root.right, stack);
-	}
-	return stack;
-};
-
-var inOrderTraversal = function(root, stack = []) {
-	if (root !== null) {
-		inOrderTraversal(root.left, stack);
-		stack.push(tree.value);
-		inOrderTraversal(root.right, stack);
-	}
-	return stack;
-};
-
 // Create a function that prints out a calendar.
 // Do not use any built-in calendar functions :)
 
@@ -55,8 +37,6 @@ function printCal(numberOfDays, startDay) {
 // start day = 0
 
 // iterate through output and join(" ")
-
-// This function should print something like the following:
 
 // Su Mo Tu We Th Fr Sa
 //                    1
