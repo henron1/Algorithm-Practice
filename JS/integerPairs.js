@@ -9,16 +9,30 @@
 // expected output: '6 5', '7 4', '8 3', '9 2', '10 1'
 // Analyze the time and space complexity of your solution.
 
-function integerPairs(nums, target) {
+// function integerPairs(nums, target) {
+// 	const result = [];
+// 	for (let i = 0; i < nums.length - 1; i++) {
+// 		let firstNumber = nums[i];
+// 		for (let j = 1; j < nums.length; j++) {
+// 			let secondNumber = nums[j];
+// 			if (nums[firstNumber] + nums[secondNumber] === target) {
+// 				result.push(`'${nums[firstNumber]}, ${nums[secondNumber]}'`);
+// 				j++;
+// 			}
+// 		}
+// 	}
+// 	return result;
+// }
+
+function integerPairs(array, target) {
+	const nums = new Map();
 	const result = [];
-	for (let i = 0; i < nums.length - 1; i++) {
-		let firstNumber = nums[i];
-		for (let j = 1; j < nums.length; j++) {
-			let secondNumber = nums[j];
-			if (nums[firstNumber] + nums[secondNumber] === target) {
-				result.push(`'${nums[firstNumber]}, ${nums[secondNumber]}'`);
-				j++;
-			}
+	for (const i of array) {
+		const match = target - i;
+		if (match in nums) {
+			result.push([match, i]);
+		} else {
+			nums[i] = true;
 		}
 	}
 	return result;
