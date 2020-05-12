@@ -24,12 +24,10 @@
 
 // If the frog is never able to jump to the other side of the river, the function should return −1.
 function solution(X, A) {
-	let temp = [];
-
+	let holdValues = new Set();
 	for (i = 0; i < A.length; i++) {
-		temp.push(A[i]);
+		holdValues.add(A[i]);
+		if (holdValues.size == X) return i;
 	}
-	let lastItem = temp.sort().pop();
-	let result = A.indexOf(lastItem);
-	return result;
+	return -1;
 }
